@@ -14,11 +14,18 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 require("lazy").setup({
-  {
-    "riakiqqnm/daymemo.nvim",
-    lazy = false,
-    config = function()
-      require("daymemo")
-    end,
-  },
+
+    {
+      dir = "~/src/lua/daymemo.nvim",
+      name = "daymemo.nvim",
+      dev = true,
+      -- Lazy load when these commands are executed
+      cmd = { "DMemo", "DMemoList" },
+
+      -- Pass the macOS path configuration directly to setup()
+      opts = {
+        memo_dir = os.getenv("HOME") .. "/DocumentsFolderPath"
+      }
+    },
+
 })
