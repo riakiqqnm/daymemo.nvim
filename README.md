@@ -12,6 +12,7 @@ A simple and lightweight daily memo taking plugin for Neovim.
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
+```lua
 require("lazy").setup({
   {
     "riakiqqnm/daymemo.nvim",
@@ -23,4 +24,5 @@ require("lazy").setup({
     }
   },
 })
+```
 
