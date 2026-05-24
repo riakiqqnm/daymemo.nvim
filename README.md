@@ -12,20 +12,15 @@ A simple and lightweight daily memo taking plugin for Neovim.
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
-```lua
 require("lazy").setup({
-
-    {
-      dir = "~/src/lua/daymemo.nvim",
-      name = "daymemo.nvim",
-      dev = true,
-      -- Lazy load when these commands are executed
-      cmd = { "DMemo", "DMemoList" },
-
-      -- Pass the macOS path configuration directly to setup()
-      opts = {
-        memo_dir = os.getenv("HOME") .. "/DocumentsFolderPath"
-      }
-    },
-
+  {
+    "riakiqqnm/daymemo.nvim",
+    -- Lazy load when these commands are executed
+    cmd = { "DMemo", "DMemoList" },
+    opts = {
+      -- Replace this with the absolute path where you want to save your memos
+      memo_dir = "/path/to/your/custom/memo/directory"
+    }
+  },
 })
+
